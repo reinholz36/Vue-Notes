@@ -7,10 +7,10 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
-            Application
+            Vue Notes
           </v-list-item-title>
           <v-list-item-subtitle>
-            subtext
+            Note taker using Vuetify
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -54,7 +54,7 @@
     data: () => ({
 		drawer: null,
 		items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard' },
+          { title: 'To Do', icon: 'mdi-view-dashboard' },
           { title: 'About', icon: 'mdi-help-box' },
         ],
 	}),
