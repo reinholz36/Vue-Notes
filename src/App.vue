@@ -1,7 +1,9 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer
-    <v-navigation-drawer permanent>
+		v-model="drawer"
+		app
+	>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
@@ -49,12 +51,12 @@
 
 <script>
   export default {
-    data: () => ({ 
-      drawer: null,
-      items: [
-            { title: 'Dashboard', icon: 'mdi-view-dashboard' },
-            { title: 'About', icon: 'mdi-help-box' },
-          ],
-     }),
+    data: () => ({
+		drawer: null,
+		items: [
+          { title: 'Dashboard', icon: 'mdi-view-dashboard' },
+          { title: 'About', icon: 'mdi-help-box' },
+        ],
+	}),
   }
 </script>
