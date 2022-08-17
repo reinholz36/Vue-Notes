@@ -1,11 +1,9 @@
 <template>
   <div class="home pa-6">
     <v-list
-      subheader
       two-line
       flat
     >
-      <v-subheader>Hangout notifications</v-subheader>
 
       <v-list-item-group
         v-model="settings"
