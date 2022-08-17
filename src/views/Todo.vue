@@ -1,5 +1,5 @@
 <template>
-  <div class="home pa-6">
+  <div class="home">
     <v-list
       two-line
       flat
