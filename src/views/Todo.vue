@@ -9,6 +9,7 @@
 			:key="task.id">
 			<v-list-item
 			@click="doneTask(task.id)"
+			:class="{'green lighten-4' : task.done}"
 			>
 				<template v-slot:default>
 				<v-list-item-action>
