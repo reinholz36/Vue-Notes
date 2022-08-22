@@ -6,6 +6,7 @@
             label="Add To List"
             append-icon="mdi-plus"
 			hide-details
+			clearable
         >
 		</v-text-field>
 		<v-list
