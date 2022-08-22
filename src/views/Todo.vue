@@ -6,6 +6,8 @@
             outlined
             label="Add To List"
             append-icon="mdi-plus"
+			@click:append="addTask"
+			@keyup.enter="addTask"
 			hide-details
 			clearable
         >
@@ -57,27 +59,21 @@
 		name: 'Todo',
 		data() {
 			return {
-				newTaskTitle: "",
-				tasks: [
-					{
-						id: 1,
-						title: 'Coffee ☕️',
-						done: false,
-					},
-					{
-						id: 2,
-						title: 'Attend to Slack messages',
-						done: false,
-					},
-					{
-						id: 3,
-						title: 'Attend to All not-yet-merged PRs',
-						done: false,
-					},
-				]
+				newTaskTitle: '',
+				tasks: []
 			}
 		},
 		methods: {
+		addTask(){
+			let newTask = {
+				id: Date.now(),
+				title: this.newTaskTitle,
+				done:false
+			}
+			this.tasks.push(newTask)
+			this.newTaskTitle=''
+		},
+
 		doneTask(id) {
 			let task = this.tasks.filter(task => task.id === id)[0]
 			task.done = !task.done
