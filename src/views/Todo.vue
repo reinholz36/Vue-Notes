@@ -1,6 +1,7 @@
 <template>
 	<div class="home">
 		<v-text-field
+			v-model="newTaskTitle"
 			class="pa-3"
             outlined
             label="Add To List"
@@ -56,6 +57,7 @@
 		name: 'Todo',
 		data() {
 			return {
+				newTaskTitle: "",
 				tasks: [
 					{
 						id: 1,
