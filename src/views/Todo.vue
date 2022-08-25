@@ -53,8 +53,17 @@
 		</v-list>
 		<div
 		v-else
+		class="no-tasks"
 		>
-		No Tasks, Yay!
+		    <v-icon
+			size="6rem"
+			color="primary"
+			>
+				mdi-check
+			</v-icon>
+			<div class="text-h5 primary--text">
+				No Notes
+			</div>
 		</div>
 	</div>
 </template>
@@ -91,3 +100,12 @@
 	}
 
 </script>
+
+<style lang="sass">
+	.no-tasks
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		opacity: 0.5
+</style>
