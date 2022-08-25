@@ -13,6 +13,7 @@
         >
 		</v-text-field>
 		<v-list
+			v-if="tasks.length"
 			class="pt-0"
 			flat
 		>
@@ -50,6 +51,11 @@
 			<v-divider></v-divider>
 		</div>
 		</v-list>
+		<div
+		v-else
+		>
+		No Tasks, Yay!
+		</div>
 	</div>
 </template>
 
