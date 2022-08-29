@@ -79,13 +79,8 @@
 		},
 		methods: {
 		addTask(){
-			let newTask = {
-				id: Date.now(),
-				title: this.newTaskTitle,
-				done:false
-			}
-			this.tasks.push(newTask)
-			this.newTaskTitle=''
+			this.$store.commit('addTask', this.newTaskTitle)
+			this.newTaskTitle = ''
 		},
 
 		doneTask(id) {
