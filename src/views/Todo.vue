@@ -21,7 +21,7 @@
 			v-for="task in $store.state.tasks"
 			:key="task.id">
 			<v-list-item
-			@click="doneTask(task.id)"
+			@click="$store.commit('doneTask', task.id)"
 			:class="{'green lighten-5' : task.done}"
 			>
 				<template v-slot:default>
@@ -83,10 +83,6 @@
 			this.newTaskTitle = ''
 		},
 
-		doneTask(id) {
-			let task = this.tasks.filter(task => task.id === id)[0]
-			task.done = !task.done
-		},
 		deleteTask(id) {
 			this.tasks = this.tasks.filter(task => task.id !== id)
 		},
