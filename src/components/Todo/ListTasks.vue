@@ -14,14 +14,11 @@
 </template>
 
 <script>
-	import Tasks from "@/components/Todo/Task.vue"
+import Tasks from "@/components/Todo/Task.vue"
+
 export default {
 	components: {
 		'tasks': Tasks,
 	}
 }
 </script>
-
-<style>
-
-</style>
