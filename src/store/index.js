@@ -11,7 +11,10 @@ export default new Vuex.Store({
 				title: "Coffee Time",
 				done:false
 			}
-		]
+		],
+		snackbar: {
+			show: true
+		}
 	},
 	getters: {
 	},

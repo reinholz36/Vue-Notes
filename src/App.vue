@@ -1,90 +1,95 @@
 <template>
-  <v-app id="inspire">
-    <v-navigation-drawer
-		v-model="drawer"
+	<v-app id="inspire">
+		<v-navigation-drawer
+			v-model="drawer"
+			app
+		>
+		<v-list-item>
+			<v-list-item-content>
+			<v-list-item-title class="text-h6">
+				Vue Notes
+			</v-list-item-title>
+			<v-list-item-subtitle>
+				Note taker using Vuetify
+			</v-list-item-subtitle>
+			</v-list-item-content>
+		</v-list-item>
+
+		<v-divider></v-divider>
+
+		<v-list
+			dense
+			nav
+		>
+			<v-list-item
+			v-for="item in items"
+			:key="item.title"
+			:to="item.to"
+			link
+			>
+			<v-list-item-icon>
+				<v-icon>{{ item.icon }}</v-icon>
+			</v-list-item-icon>
+
+			<v-list-item-content>
+				<v-list-item-title>{{ item.title }}</v-list-item-title>
+			</v-list-item-content>
+			</v-list-item>
+		</v-list>
+		</v-navigation-drawer>
+
+		<v-app-bar
 		app
-	>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h6">
-            Vue Notes
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Note taker using Vuetify
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
+		color="primary"
+		dark
+		src="sky.jpg"
+		prominent
+		>
+		<template v-slot:img="{ props }">
+			<v-img
+			v-bind="props"
+			gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+			></v-img>
+		</template>
 
-      <v-divider></v-divider>
+		<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-list
-        dense
-        nav
-      >
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-		  :to="item.to"
-          link
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+		<v-app-bar-title>Vue Notes</v-app-bar-title>
 
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+		<v-spacer></v-spacer>
 
-	<v-app-bar
-	  app
-      color="primary"
-      dark
-      src="sky.jpg"
-	  prominent
-    >
-      <template v-slot:img="{ props }">
-        <v-img
-          v-bind="props"
-          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
-        ></v-img>
-      </template>
+		<v-btn icon>
+			<v-icon>mdi-magnify</v-icon>
+		</v-btn>
 
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+		<v-btn icon>
+			<v-icon>mdi-heart</v-icon>
+		</v-btn>
 
-      <v-app-bar-title>Vue Notes</v-app-bar-title>
+		<v-btn icon>
+			<v-icon>mdi-dots-vertical</v-icon>
+		</v-btn>
+		</v-app-bar>
 
-      <v-spacer></v-spacer>
+		<v-main>
+		<router-view></router-view>
+		<snackbar />
+		</v-main>
+	</v-app>
+	</template>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <router-view></router-view>
-    </v-main>
-  </v-app>
-</template>
-
-<script>
-  export default {
-    data: () => ({
-		drawer: null,
-		items: [
-          { title: 'To Do', icon: 'mdi-format-list-checks', to: '/' },
-          { title: 'About', icon: 'mdi-help-box', to: '/about' },
-        ],
-	}),
-  }
+	<script>
+import SnackbarVue from './components/Shared/Snackbar.vue'
+	export default {
+		data: () => ({
+			drawer: null,
+			items: [
+			{ title: 'To Do', icon: 'mdi-format-list-checks', to: '/' },
+			{ title: 'About', icon: 'mdi-help-box', to: '/about' },
+			],
+		}),
+		components: {
+			'snackbar':SnackbarVue
+		}
+	}
 </script>
