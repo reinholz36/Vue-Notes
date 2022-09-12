@@ -12,8 +12,8 @@
 			<v-card-actions>
 			<v-spacer></v-spacer>
 			<v-btn
+				@click="$emit('no-selected-in-delete-dialog')"
 				text
-				@click="dialog = false"
 			>
 				No
 			</v-btn>

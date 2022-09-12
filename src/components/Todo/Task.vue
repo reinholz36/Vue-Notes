@@ -32,6 +32,7 @@
 	<v-divider></v-divider>
 	<dialog-delete
 	v-if="dialogs.delete"
+	@no-selected-in-delete-dialog="dialogs.delete = false"
 	:task="task"
 	/>
 	</div>
