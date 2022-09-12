@@ -20,7 +20,7 @@
 
 		<v-list-item-action>
 			<v-btn
-			@click.stop="$store.dispatch('deleteTask', task.id)"
+			@click.stop="dialogs.delete = true"
 
 			icon>
 				<v-icon color="primary lighten-1">mdi-trash-can-outline</v-icon>
@@ -30,7 +30,9 @@
 
 	</v-list-item>
 	<v-divider></v-divider>
-	<dialog-delete />
+	<dialog-delete
+	v-if="dialogs.delete"
+	/>
 	</div>
 </template>
 
@@ -38,6 +40,13 @@
 import DialogDeleteVue from '@/components/Todo/Dialogs/DialogDelete.vue'
 export default {
 	props: ['task'],
+	data() {
+		return {
+			dialogs: {
+				delete: false
+			}
+		}
+	},
 	components: {
 		'dialog-delete': DialogDeleteVue
 	}
