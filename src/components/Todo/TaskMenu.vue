@@ -18,8 +18,9 @@
 		rounded
 		>
 			<v-list-item
-				v-for="(item, i) in items"
-				:key="i"
+				v-for="(item, index) in items"
+				:key="index"
+				@click="handleMenuSelect(index)"
 			>
 				<v-list-item-icon>
 					<v-icon v-text="item.icon"></v-icon>
@@ -37,18 +38,31 @@ export default {
 			{
 				title: 'Edit',
 				icon: 'mdi-pencil',
-
+				click() {
+					console.log('Edit clicked!')
+				},
 			},
 			{
 				title: 'Due Date',
 				icon: 'mdi-calendar-clock',
+				click() {
+					console.log('Due Date clicked!')
+				},
 			},
 			{
 				title: 'Delete',
 				icon: 'mdi-delete',
+				click() {
+					console.log('Delete clicked!')
+				},
 			},
 		],
     }),
+	methods: {
+		handleMenuSelect(index){
+			this.items[index].click();
+		}
+	},
 }
 </script>
 
