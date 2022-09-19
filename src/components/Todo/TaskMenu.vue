@@ -31,29 +31,37 @@
 			</v-list>
 		</v-menu>
 
+		<dialog-edit
+		v-if="dialogs.edit"
+		@no-selected-in-delete-dialog="dialogs.edit = false"
+		:task="task"
+		/>
+
 		<dialog-delete
-	v-if="dialogs.delete"
-	@no-selected-in-delete-dialog="dialogs.delete = false"
-	:task="task"
-	/>
+		v-if="dialogs.delete"
+		@no-selected-in-delete-dialog="dialogs.delete = false"
+		:task="task"
+		/>
 	</div>
 </template>
 
 <script>
+import DialogEditVue from '@/components/Todo/Dialogs/DialogEdit.vue'
 import DialogDeleteVue from '@/components/Todo/Dialogs/DialogDelete.vue'
 export default {
 	props: ['task'],
     data: () => ({
 
 		dialogs: {
-			delete: false
+			delete: false,
+			edit: false
 		},
 		items: [
 			{
 				title: 'Edit',
 				icon: 'mdi-pencil',
 				click() {
-					console.log('Edit clicked!')
+					this.dialogs.edit = true;
 				},
 			},
 			{
@@ -78,6 +86,7 @@ export default {
 		}
 	},
 	components: {
+		'dialog-edit': DialogEditVue,
 		'dialog-delete': DialogDeleteVue,
 	},
 }
