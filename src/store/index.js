@@ -35,6 +35,11 @@ export default new Vuex.Store({
 		deleteTask(state, id) {
 			state.tasks = state.tasks.filter(task => task.id !== id)
 		},
+		updateTask(state, payload) {
+			console.log('edit payload', payload)
+			let task = state.tasks.filter(task => task.id === payload.id)[0]
+			task.title = payload.title
+		},
 		showSnackbar(state, text) {
 			let timeout = 0
 			if (state.snackbar.show) {
