@@ -12,6 +12,7 @@
 				Edit the title of this note:
 				<v-text-field
 				v-model="taskTitle"
+				@keyup.enter="saveTask"
 				/>
 			</v-card-text>
 			<v-card-actions>
