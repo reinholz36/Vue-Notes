@@ -17,7 +17,7 @@
 			<v-card-actions>
 			<v-spacer></v-spacer>
 			<v-btn
-				@click="$emit('no-selected-in-delete-dialog')"
+				@click="$emit('close')"
 				text
 			>
 				Cancel
@@ -52,6 +52,7 @@ export default {
 				title: this.taskTitle,
 			}
 			this.$store.commit('updateTask', payload)
+			this.$emit('close')
 		},
 	},
 }

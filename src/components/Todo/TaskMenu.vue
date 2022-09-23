@@ -33,13 +33,13 @@
 
 		<dialog-edit
 		v-if="dialogs.edit"
-		@no-selected-in-delete-dialog="dialogs.edit = false"
+		@close="dialogs.edit = false"
 		:task="task"
 		/>
 
 		<dialog-delete
 		v-if="dialogs.delete"
-		@no-selected-in-delete-dialog="dialogs.delete = false"
+		@close="dialogs.delete = false"
 		:task="task"
 		/>
 	</div>
