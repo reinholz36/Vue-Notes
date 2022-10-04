@@ -59,7 +59,7 @@ export default {
 				id: this.task.id,
 				title: this.taskTitle,
 				}
-				this.$store.commit('updateTask', payload)
+				this.$store.dispatch('updateTask', payload)
 				this.$emit('close')
 			}
 		},
