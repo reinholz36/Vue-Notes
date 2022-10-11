@@ -10,7 +10,7 @@ export default new Vuex.Store({
 				id: 1,
 				title: "Coffee Time",
 				done:false,
-				dueDate: '2022-11-05'
+				dueDate: '2022-11-04'
 			},
 			{
 				id: 2,
@@ -22,7 +22,7 @@ export default new Vuex.Store({
 				id: 3,
 				title: "Schedule Pairing and PR-Review",
 				done:false,
-				dueDate: ''
+				dueDate: null
 			}
 		],
 		snackbar: {
