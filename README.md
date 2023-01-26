@@ -4,13 +4,15 @@
 - [Description](#description)
 - [Technologies Used](#technologies-used)
 - [Link to live site](#link-to-live-site)
+<!--
 - [Milestones](#milestones)
 - [Challenges](#challenges)
+
 - [Project Setup](#project-setup)
 - [Resource Links](#resource-links)
-
+-->
 ## Description
-Simple project to practice vue and veutify from youtube channel Make Apps with Danny: https://www.youtube.com/watch?v=CjXgoYo86yY
+Note taking project to practice Vue and Veutify
 
 ## Technologies Used
 
@@ -21,16 +23,16 @@ Simple project to practice vue and veutify from youtube channel Make Apps with D
 
 ## Link to live site
 
-*to be added*
+https://bejewelled-chebakia-a0a34e.netlify.app/#/
 
-## Milestones
+<!-- ## Milestones
 
 *to be added*
 
 ## Challenges
 
 *to be added*
-
+-->
 ## Project Setup
 ```
 npm install
@@ -47,4 +49,4 @@ npm run build
 ```
 ## Resource Links
 
-*to be added*
+<a href="https://www.youtube.com/watch?v=CjXgoYo86yY"> Practice Vue and Veutify from youtube channel "Make Apps with Danny" </a>
