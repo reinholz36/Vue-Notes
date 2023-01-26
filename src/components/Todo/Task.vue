@@ -39,14 +39,16 @@
 </template>
 
 <script>
-import { format } from 'date-fns'
 
 import TaskMenuVue from '@/components/Todo/TaskMenu.vue'
 export default {
 	props: ['task'],
 	filters: {
 		niceDate(value) {
-			return format(new Date(value), 'MMM d')
+			console.log("🚀 ~ file: Task.vue:49 ~ niceDate ~ value", value)
+			const month = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"]
+			const dateFormat  = month[value.split("-")[1] - 1] + " " + value.split("-")[2]
+			return dateFormat
 		}
 	},
 	components: {
