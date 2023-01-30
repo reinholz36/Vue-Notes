@@ -58,6 +58,8 @@
 
 		<v-spacer></v-spacer>
 
+		<search />
+
 		<v-btn icon>
 			<v-icon>mdi-magnify</v-icon>
 		</v-btn>
@@ -73,6 +75,7 @@
 
 	<script>
 import SnackbarVue from './components/Shared/Snackbar.vue'
+import SearchVue from './components/Tools/Search.vue'
 	export default {
 		data: () => ({
 			drawer: null,
@@ -82,7 +85,8 @@ import SnackbarVue from './components/Shared/Snackbar.vue'
 			],
 		}),
 		components: {
-			'snackbar':SnackbarVue
+			'snackbar':SnackbarVue,
+			'search':SearchVue
 		}
 	}
 </script>
