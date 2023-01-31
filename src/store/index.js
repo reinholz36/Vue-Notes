@@ -95,5 +95,14 @@ export default new Vuex.Store({
 			commit('updateTaskDueDate', payload)
 			commit('showSnackbar', 'Due Date Updated!')
 		}
+	},
+	getters: {
+		tasksFiltered(state){
+			if (!state.search) {
+				return state.tasks
+			}
+			return state.tasks.filter(task =>
+				task.title.toLowerCase().includes(state.search.toLowerCase()))
+		}
 	}
 })
