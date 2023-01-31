@@ -52,13 +52,22 @@
 			></v-img>
 		</template>
 
-		<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-		<v-app-bar-title>Vue Notes</v-app-bar-title>
-
-		<v-spacer></v-spacer>
-
-		<search />
+		<v-container
+		class="pa-1"
+		>
+			<v-row>
+				<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+				<v-spacer></v-spacer>
+				<search />
+			</v-row>
+			<v-row>
+				<v-app-bar-title
+				class="ml-4"
+				>
+					Vue Notes
+				</v-app-bar-title>
+			</v-row>
+		</v-container>
 
 		</v-app-bar>
 
