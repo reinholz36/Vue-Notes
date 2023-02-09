@@ -44,6 +44,7 @@
 		dark
 		src="sky.jpg"
 		prominent
+		height="170"
 		>
 		<template v-slot:img="{ props }">
 			<v-img
@@ -62,10 +63,13 @@
 			</v-row>
 			<v-row>
 				<v-app-bar-title
-				class="ml-4"
+				class="text-h4 ml-4"
 				>
 					Vue Notes
 				</v-app-bar-title>
+			</v-row>
+			<v-row>
+				<live-date-time />
 			</v-row>
 		</v-container>
 
@@ -81,6 +85,7 @@
 	<script>
 import SnackbarVue from './components/Shared/Snackbar.vue'
 import SearchVue from './components/Tools/Search.vue'
+import LiveDateTime from './components/Tools/LiveDateTime.vue';
 	export default {
 		data: () => ({
 			drawer: null,
@@ -91,7 +96,8 @@ import SearchVue from './components/Tools/Search.vue'
 		}),
 		components: {
 			'snackbar':SnackbarVue,
-			'search':SearchVue
+			'search':SearchVue,
+			'live-date-time':LiveDateTime,
 		}
 	}
 </script>
