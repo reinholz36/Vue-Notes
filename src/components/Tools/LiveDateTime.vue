@@ -2,13 +2,27 @@
 	<div
 	class="text-subtitle-1 ml-4"
 	>
-		October 20, 14:40
+		{{ date }}
 	</div>
 </template>
 
 <script>
+import { format } from 'date-fns'
 export default {
-
+	data() {
+		return {
+			date: ''
+		}
+	},
+	methods: {
+		getDate() {
+			this.date = format(new Date(), 'MMMM d, H:mm:ss')
+			setTimeout(this.getDate, 1000)
+		}
+	},
+	mounted() {
+		this.getDate()
+	}
 }
 </script>
 
